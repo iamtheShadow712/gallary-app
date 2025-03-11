@@ -1,3 +1,4 @@
+import GallaryItem from '../gallaryItem/GallaryItem'
 import './Gallary.css'
 
 
@@ -71,12 +72,6 @@ const items = [
     {
         id: 12,
         media: "/pins/pin12.jpeg",
-        width: 1260,
-        height: 1400,
-    },
-    {
-        id: 13,
-        media: "/pins/pin13.jpeg",
         width: 1260,
         height: 1400,
     },
@@ -157,7 +152,11 @@ const items = [
 
 const Gallary = () => {
     return (
-        <div className='gallary'>Gallary</div>
+        <div className='gallary'>
+            {items.map(item => (
+                <GallaryItem key={item.id} item={item} />
+            ))}
+        </div>
     )
 }
 
